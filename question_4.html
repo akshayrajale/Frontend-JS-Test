@@ -1,0 +1,27 @@
+<form>
+<input type=”text” name=”firstname” />
+
+<input type=”check” name=”checkme” />
+<input type=”submit” value=”submit” />
+</form>
+For the above form, write validation in javascript so that if the firstname is
+empty or if checkme is not checked, it will not allow the form to submit.
+
+answer
+
+<form name="run" onsubmit="return form()" method="GET">  
+<input type='text' name='firstname' />
+<input type='checkbox' name='checkme' />
+<input type='submit' value='submit'>
+</form>
+
+<script>
+function form() {
+  var x = document.forms["run"]["firstname"].value;
+  var y = document.forms["run"]["checkme"].checked;
+  if (x == "" && y ===false) {    
+      alert("Invalid")
+        return false;
+  }    
+}
+</script>
